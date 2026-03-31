@@ -27,8 +27,8 @@ AgentParam is an enterprise-grade, multi-agent ecosystem designed for total auto
 
 ### 2. Installation
 ```powershell
-git clone https://github.com/YOUR_USERNAME/agentscope-sovereign-swarm.git
-cd agentscope-sovereign-swarm
+git clone https://github.com/thesharmavikash/AgentParam.git
+cd AgentParam
 pip install -r requirements.txt
 ```
 
