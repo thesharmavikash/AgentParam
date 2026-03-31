@@ -1,0 +1,8 @@
+agentscope>=0.0.1
+chromadb
+beautifulsoup4
+requests
+docker
+playwright
+openai
+python-telegram-bot

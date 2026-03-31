@@ -1,0 +1,23 @@
+# Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# AgentScope & Project Data
+runs/
+workspace/
+companies/*/projects/
+shared_library/genomes/
+*.bak
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

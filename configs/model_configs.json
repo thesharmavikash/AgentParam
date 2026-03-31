@@ -1,0 +1,38 @@
+[
+    {
+        "config_name": "openai_complex",
+        "model_type": "openai_chat",
+        "model_name": "gpt-4o",
+        "api_key": "YOUR_OPENAI_KEY"
+    },
+    {
+        "config_name": "openai_efficient",
+        "model_type": "openai_chat",
+        "model_name": "gpt-4o-mini",
+        "api_key": "YOUR_OPENAI_KEY"
+    },
+    {
+        "config_name": "anthropic_complex",
+        "model_type": "anthropic_chat",
+        "model_name": "claude-3-5-sonnet-20240620",
+        "api_key": "YOUR_ANTHROPIC_KEY"
+    },
+    {
+        "config_name": "anthropic_efficient",
+        "model_type": "anthropic_chat",
+        "model_name": "claude-3-haiku-20240307",
+        "api_key": "YOUR_ANTHROPIC_KEY"
+    },
+    {
+        "config_name": "google_complex",
+        "model_type": "google_gemini_chat",
+        "model_name": "gemini-1.5-pro",
+        "api_key": "YOUR_GEMINI_KEY"
+    },
+    {
+        "config_name": "google_efficient",
+        "model_type": "google_gemini_chat",
+        "model_name": "gemini-1.5-flash",
+        "api_key": "YOUR_GEMINI_KEY"
+    }
+]

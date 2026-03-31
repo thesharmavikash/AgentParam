@@ -1,0 +1,6 @@
+{
+    "company_name": "MarketInsight_Global",
+    "specialization": "Market Research",
+    "team_set": ["Searcher", "Summarizer", "Strategist"],
+    "base_workspace": "companies/MarketInsight_Global/projects"
+}

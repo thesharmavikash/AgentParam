@@ -1,0 +1,6 @@
+{
+    "company_name": "DevShop_Pro",
+    "specialization": "Software Engineering",
+    "team_set": ["Planner", "ProductManager", "Coder", "ParallelCoder", "SwarmJudge", "Tester", "SecurityExpert", "SecurityReviewer", "DocumentationSpecialist", "QAAgent", "DevOps"],
+    "base_workspace": "companies/DevShop_Pro/projects"
+}
