@@ -1,8 +1,8 @@
-# 🚀 AgentScope Sovereign Swarm (v31.0)
+# 🚀 AgentParam (v31.0)
 
 **The World's Most Advanced Autonomous AI General Intelligence Organization (AGIO).**
 
-AgentScope Sovereign Swarm is an enterprise-grade, multi-agent ecosystem designed for total autonomy. It builds, tests, audits, and maintains complex software and business strategies while managing its own finances, legal status, and neural evolution.
+AgentParam is an enterprise-grade, multi-agent ecosystem designed for total autonomy. It builds, tests, audits, and maintains complex software and business strategies while managing its own finances, legal status, and neural evolution.
 
 ## 🌟 Key Capabilities
 - **Sovereign Intelligence:** Self-directed objectives via the Singularity Core.
