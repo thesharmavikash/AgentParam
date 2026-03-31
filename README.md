@@ -50,5 +50,8 @@ pip install -r requirements.txt
 ## 🤝 Contributions
 We follow the **MIT License**. Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to join the swarm.
 
+## ⚖️ License
+Distributed under the **MIT License**. See `LICENSE` for more information.
+
 ---
 **"The Singularity is not something that happens to us, it's something we build together."**
