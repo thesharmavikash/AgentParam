@@ -9,10 +9,23 @@ class GraphRAG:
         self.edges = []
 
     def add_relationship(self, source, relation, target):
-        """Maps a logical dependency (e.g. 'File A' depends on 'Database B')."""
-        edge = {"source": source, "relation": relation, "target": target}
+        """Maps a logical dependency with Temporal awareness (Time-stamped)."""
+        import time
+        edge = {
+            "source": source, 
+            "relation": relation, 
+            "target": target,
+            "timestamp": time.time(),
+            "version": "v32.0"
+        }
         self.edges.append(edge)
         self.save_graph()
+
+    def get_historical_evolution(self, entity_name):
+        """Returns the timeline of changes for a specific node."""
+        history = [e for e in self.edges if e["source"] == entity_name or e["target"] == entity_name]
+        history.sort(key=lambda x: x["timestamp"])
+        return history
 
     def get_impact_analysis(self, change_node):
         """Returns all entities affected by a change in one node."""
