@@ -25,6 +25,8 @@ from agents.performance_suite import BenchmarkerAgent, CleanCodeExpertAgent
 from agents.lifecycle_suite import ProductMarketFitAgent, UIDesignerAgent, SREAgent, CustomerSupportAgent
 from agents.divine_suite import ClarityInterviewerAgent, RefactorOracleAgent, TrainingCuratorAgent, TokenArbitratorAgent
 from agents.content_suite import MarketArbitratorAgent, EthicsKernelAgent, ContentVisionaryAgent
+from agents.civilization_suite import HeartbeatOracleAgent, TreasuryManagerAgent, OpenSourceDiplomatAgent
+from agents.omega_suite import HardwareKernelAgent, PhysicsOracleAgent, CellularGeneratorAgent, MetabolismAgent, LegacyGuardianAgent
 
 def get_agent_instance(agent_role, project_name, model_config, briefing=""):
     """
@@ -72,7 +74,15 @@ def get_agent_instance(agent_role, project_name, model_config, briefing=""):
         "TokenArbitrator": lambda: TokenArbitratorAgent(model_config_name=model_config),
         "MarketArbitrator": lambda: MarketArbitratorAgent(model_config_name=model_config),
         "EthicsKernel": lambda: EthicsKernelAgent(model_config_name=model_config),
-        "ContentVisionary": lambda: ContentVisionaryAgent(model_config_name=model_config)
+        "ContentVisionary": lambda: ContentVisionaryAgent(model_config_name=model_config),
+        "HeartbeatOracle": lambda: HeartbeatOracleAgent(model_config_name=model_config),
+        "TreasuryManager": lambda: TreasuryManagerAgent(model_config_name=model_config),
+        "OSSDiplomat": lambda: OpenSourceDiplomatAgent(model_config_name=model_config),
+        "HardwareKernel": lambda: HardwareKernelAgent(model_config_name=model_config),
+        "PhysicsOracle": lambda: PhysicsOracleAgent(model_config_name=model_config),
+        "RecursiveGen": lambda: CellularGeneratorAgent(model_config_name=model_config),
+        "ComputeMetabolism": lambda: MetabolismAgent(model_config_name=model_config),
+        "LegacyGuardian": lambda: LegacyGuardianAgent(model_config_name=model_config)
     }
 
 
