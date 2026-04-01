@@ -24,6 +24,22 @@ class TesterAgent(AgentBase):
                 language = 'html'
             elif file_path.endswith('.sh'):
                 language = 'bash'
+            elif file_path.endswith('.rs'):
+                language = 'rust'
+            elif file_path.endswith('.pl'):
+                language = 'prolog'
+            elif file_path.endswith('.go'):
+                language = 'go'
+            elif file_path.endswith('.java'):
+                language = 'java'
+            elif file_path.endswith('.cpp') or file_path.endswith('.cc'):
+                language = 'cpp'
+            elif file_path.endswith('.rb'):
+                language = 'ruby'
+            elif file_path.endswith('.php'):
+                language = 'php'
+            elif file_path.endswith('.ts'):
+                language = 'typescript'
         else:
             # Fallback to default
             file_path = f"workspace/{self.project_name}/main.py"

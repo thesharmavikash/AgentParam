@@ -38,7 +38,15 @@ def execute_any_code(file_path: str, language: str, use_docker: bool = False):
     runtime_map = {
         "python": {"cmd": [sys.executable]},
         "javascript": {"cmd": ["node"]},
-        "bash": {"cmd": ["bash"]}
+        "typescript": {"cmd": ["ts-node"]},
+        "bash": {"cmd": ["bash"]},
+        "rust": {"cmd": ["cargo", "run", "--manifest-path"]},
+        "prolog": {"cmd": ["swipl", "-q", "-t", "halt", "-s"]},
+        "go": {"cmd": ["go", "run"]},
+        "java": {"cmd": ["java"]},
+        "cpp": {"cmd": ["g++", "-o", "main", "&&", "./main"]},
+        "ruby": {"cmd": ["ruby"]},
+        "php": {"cmd": ["php"]}
     }
     config = runtime_map.get(language.lower(), {"cmd": None})
     

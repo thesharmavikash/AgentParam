@@ -18,6 +18,7 @@ from agents.legal import LegalAdvisorAgent
 from agents.seo import SEOExpertAgent
 from agents.psychologist import UXPsychologistAgent
 from agents.reasoning import ReasoningAgent
+from agents.polyglot import PolyglotResearcherAgent
 
 def get_agent_instance(agent_role, project_name, model_config, briefing=""):
     """
@@ -44,7 +45,8 @@ def get_agent_instance(agent_role, project_name, model_config, briefing=""):
         "LegalAdvisor": lambda: LegalAdvisorAgent(project_name=project_name, model_config_name=model_config),
         "SEOExpert": lambda: SEOExpertAgent(model_config_name=model_config),
         "UXPsychologist": lambda: UXPsychologistAgent(model_config_name=model_config),
-        "ReasoningExpert": lambda: ReasoningAgent(model_config_name=model_config)
+        "ReasoningExpert": lambda: ReasoningAgent(model_config_name=model_config),
+        "PolyglotResearcher": lambda: PolyglotResearcherAgent(model_config_name=model_config)
     }
 
     return registry.get(agent_role, lambda: None)()
