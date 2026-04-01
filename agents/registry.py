@@ -23,7 +23,8 @@ from agents.apex_experts import SiliconArchitectAgent, PenTesterAgent, GrowthHac
 from agents.security_suite import PrivacyOfficerAgent, ComplianceAgent, SupplyChainSecAgent
 from agents.performance_suite import BenchmarkerAgent, CleanCodeExpertAgent
 from agents.lifecycle_suite import ProductMarketFitAgent, UIDesignerAgent, SREAgent, CustomerSupportAgent
-from agents.divine_suite import ClarityInterviewerAgent, RefactorOracleAgent, TrainingCuratorAgent, TokenArbitratorAgent, ContentVisionaryAgent
+from agents.divine_suite import ClarityInterviewerAgent, RefactorOracleAgent, TrainingCuratorAgent, TokenArbitratorAgent
+from agents.content_suite import MarketArbitratorAgent, EthicsKernelAgent, ContentVisionaryAgent
 
 def get_agent_instance(agent_role, project_name, model_config, briefing=""):
     """
@@ -69,6 +70,8 @@ def get_agent_instance(agent_role, project_name, model_config, briefing=""):
         "RefactorOracle": lambda: RefactorOracleAgent(model_config_name=model_config),
         "TrainingCurator": lambda: TrainingCuratorAgent(model_config_name=model_config),
         "TokenArbitrator": lambda: TokenArbitratorAgent(model_config_name=model_config),
+        "MarketArbitrator": lambda: MarketArbitratorAgent(model_config_name=model_config),
+        "EthicsKernel": lambda: EthicsKernelAgent(model_config_name=model_config),
         "ContentVisionary": lambda: ContentVisionaryAgent(model_config_name=model_config)
     }
 
