@@ -19,6 +19,11 @@ from agents.seo import SEOExpertAgent
 from agents.psychologist import UXPsychologistAgent
 from agents.reasoning import ReasoningAgent
 from agents.polyglot import PolyglotResearcherAgent
+from agents.apex_experts import SiliconArchitectAgent, PenTesterAgent, GrowthHackerAgent, DataScientistAgent
+from agents.security_suite import PrivacyOfficerAgent, ComplianceAgent, SupplyChainSecAgent
+from agents.performance_suite import BenchmarkerAgent, CleanCodeExpertAgent
+from agents.lifecycle_suite import ProductMarketFitAgent, UIDesignerAgent, SREAgent, CustomerSupportAgent
+from agents.divine_suite import ClarityInterviewerAgent, RefactorOracleAgent, TrainingCuratorAgent, TokenArbitratorAgent, ContentVisionaryAgent
 
 def get_agent_instance(agent_role, project_name, model_config, briefing=""):
     """
@@ -46,7 +51,26 @@ def get_agent_instance(agent_role, project_name, model_config, briefing=""):
         "SEOExpert": lambda: SEOExpertAgent(model_config_name=model_config),
         "UXPsychologist": lambda: UXPsychologistAgent(model_config_name=model_config),
         "ReasoningExpert": lambda: ReasoningAgent(model_config_name=model_config),
-        "PolyglotResearcher": lambda: PolyglotResearcherAgent(model_config_name=model_config)
+        "PolyglotResearcher": lambda: PolyglotResearcherAgent(model_config_name=model_config),
+        "SiliconArchitect": lambda: SiliconArchitectAgent(model_config_name=model_config),
+        "OffensiveSec": lambda: PenTesterAgent(model_config_name=model_config),
+        "GrowthHacker": lambda: GrowthHackerAgent(model_config_name=model_config),
+        "DataScientist": lambda: DataScientistAgent(model_config_name=model_config),
+        "PrivacyOfficer": lambda: PrivacyOfficerAgent(model_config_name=model_config),
+        "ComplianceExpert": lambda: ComplianceAgent(model_config_name=model_config),
+        "SupplyChainSec": lambda: SupplyChainSecAgent(model_config_name=model_config),
+        "Benchmarker": lambda: BenchmarkerAgent(model_config_name=model_config),
+        "CleanCodeExpert": lambda: CleanCodeExpertAgent(model_config_name=model_config),
+        "PMF_Analyst": lambda: ProductMarketFitAgent(model_config_name=model_config),
+        "UIDesigner": lambda: UIDesignerAgent(model_config_name=model_config),
+        "SRE_Engineer": lambda: SREAgent(model_config_name=model_config),
+        "SupportBot_Creator": lambda: CustomerSupportAgent(model_config_name=model_config),
+        "ClarityInterviewer": lambda: ClarityInterviewerAgent(model_config_name=model_config),
+        "RefactorOracle": lambda: RefactorOracleAgent(model_config_name=model_config),
+        "TrainingCurator": lambda: TrainingCuratorAgent(model_config_name=model_config),
+        "TokenArbitrator": lambda: TokenArbitratorAgent(model_config_name=model_config),
+        "ContentVisionary": lambda: ContentVisionaryAgent(model_config_name=model_config)
     }
+
 
     return registry.get(agent_role, lambda: None)()
