@@ -34,19 +34,69 @@ def execute_any_code(file_path: str, language: str, use_docker: bool = False):
     if not os.path.exists(file_path):
         return {"success": False, "stdout": "", "stderr": f"File not found: {file_path}", "saved_path": file_path}
     
-    # 2. Map language to runtimes
+    # 2. Map language to runtimes (Major Expansion v34.0)
     runtime_map = {
+        # Core Web & Scripting
         "python": {"cmd": [sys.executable]},
         "javascript": {"cmd": ["node"]},
         "typescript": {"cmd": ["ts-node"]},
         "bash": {"cmd": ["bash"]},
-        "rust": {"cmd": ["cargo", "run", "--manifest-path"]},
-        "prolog": {"cmd": ["swipl", "-q", "-t", "halt", "-s"]},
-        "go": {"cmd": ["go", "run"]},
-        "java": {"cmd": ["java"]},
-        "cpp": {"cmd": ["g++", "-o", "main", "&&", "./main"]},
+        "php": {"cmd": ["php"]},
         "ruby": {"cmd": ["ruby"]},
-        "php": {"cmd": ["php"]}
+        "perl": {"cmd": ["perl"]},
+        "lua": {"cmd": ["lua"]},
+        
+        # Systems & Performance
+        "rust": {"cmd": ["cargo", "run", "--manifest-path"]},
+        "go": {"cmd": ["go", "run"]},
+        "cpp": {"cmd": ["g++", "-o", "main", "&&", "./main"]},
+        "c": {"cmd": ["gcc", "-o", "main", "&&", "./main"]},
+        "zig": {"cmd": ["zig", "run"]},
+        "mojo": {"cmd": ["mojo", "run"]},
+        "fortran": {"cmd": ["gfortran", "-o", "main", "&&", "./main"]},
+        "ada": {"cmd": ["gnatmake", "main", "&&", "./main"]},
+        
+        # Enterprise & Mobile
+        "java": {"cmd": ["java"]},
+        "kotlin": {"cmd": ["kotlinc", "-script"]},
+        "swift": {"cmd": ["swift"]},
+        "csharp": {"cmd": ["dotnet", "run"]},
+        "objectivec": {"cmd": ["clang", "-framework", "Foundation"]},
+        "scala": {"cmd": ["scala"]},
+        "groovy": {"cmd": ["groovy"]},
+        "dart": {"cmd": ["dart", "run"]},
+        
+        # Data Science & Math
+        "r": {"cmd": ["Rscript"]},
+        "julia": {"cmd": ["julia"]},
+        "matlab": {"cmd": ["matlab", "-batch"]},
+        "sas": {"cmd": ["sas"]},
+        "stata": {"cmd": ["stata"]},
+        
+        # Functional & Logic
+        "prolog": {"cmd": ["swipl", "-q", "-t", "halt", "-s"]},
+        "haskell": {"cmd": ["runghc"]},
+        "erlang": {"cmd": ["erl", "-noshell", "-s"]},
+        "clojure": {"cmd": ["clojure", "-M"]},
+        "elixir": {"cmd": ["elixir"]},
+        "lisp": {"cmd": ["sbcl", "--script"]},
+        "ocaml": {"cmd": ["ocaml"]},
+        "fsharp": {"cmd": ["dotnet", "fsi"]},
+        
+        # Database & Niche
+        "sql": {"cmd": ["sqlite3"]}, # Default to sqlite for local tests
+        "powershell": {"cmd": ["powershell", "-Command"]},
+        "cobol": {"cmd": ["cobc", "-x", "-o", "main", "&&", "./main"]},
+        "pascal": {"cmd": ["fpc"]},
+        "assembly": {"cmd": ["nasm", "-f", "elf64", "&&", "ld"]},
+        "solidity": {"cmd": ["solc"]},
+        "verilog": {"cmd": ["iverilog", "-o", "main", "&&", "vvp", "main"]},
+        "vhdl": {"cmd": ["ghdl", "-a"]},
+        "tcl": {"cmd": ["tclsh"]},
+        "scheme": {"cmd": ["guile", "-s"]},
+        "abap": {"cmd": ["abap"]},
+        "apex": {"cmd": ["sfdx", "force:apex:execute"]},
+        "delphi": {"cmd": ["dcc32"]}
     }
     config = runtime_map.get(language.lower(), {"cmd": None})
     

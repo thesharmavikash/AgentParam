@@ -13,35 +13,26 @@ class TesterAgent(AgentBase):
         content = x.content
         language = "python" # Default
         
-        # Look for the file path in the message
+        # Comprehensive Extension-to-Language Mapping (v34.0)
+        ext_map = {
+            '.py': 'python', '.js': 'javascript', '.ts': 'typescript', '.sh': 'bash',
+            '.rs': 'rust', '.pl': 'prolog', '.go': 'go', '.java': 'java',
+            '.cpp': 'cpp', '.cc': 'cpp', '.c': 'c', '.rb': 'ruby',
+            '.php': 'php', '.kt': 'kotlin', '.swift': 'swift', '.cs': 'csharp',
+            '.scala': 'scala', '.r': 'r', '.jl': 'julia', '.m': 'matlab',
+            '.hs': 'haskell', '.erl': 'erlang', '.clj': 'clojure', '.ex': 'elixir',
+            '.zig': 'zig', '.mojo': 'mojo', '.f90': 'fortran', '.sql': 'sql',
+            '.ps1': 'powershell', '.cob': 'cobol', '.pas': 'pascal', '.sol': 'solidity'
+        }
+        
         import re
         file_path_match = re.search(r"workspace/[a-zA-Z0-9_-]+/[a-zA-Z0-9_.-]+", content)
         if file_path_match:
             file_path = file_path_match.group(0)
-            if file_path.endswith('.js'):
-                language = 'javascript'
-            elif file_path.endswith('.html'):
-                language = 'html'
-            elif file_path.endswith('.sh'):
-                language = 'bash'
-            elif file_path.endswith('.rs'):
-                language = 'rust'
-            elif file_path.endswith('.pl'):
-                language = 'prolog'
-            elif file_path.endswith('.go'):
-                language = 'go'
-            elif file_path.endswith('.java'):
-                language = 'java'
-            elif file_path.endswith('.cpp') or file_path.endswith('.cc'):
-                language = 'cpp'
-            elif file_path.endswith('.rb'):
-                language = 'ruby'
-            elif file_path.endswith('.php'):
-                language = 'php'
-            elif file_path.endswith('.ts'):
-                language = 'typescript'
+            # Find extension
+            _, ext = os.path.splitext(file_path)
+            language = ext_map.get(ext.lower(), "python")
         else:
-            # Fallback to default
             file_path = f"workspace/{self.project_name}/main.py"
 
         print(f"[{self.name}] Testing File: {file_path} (Language: {language})")
